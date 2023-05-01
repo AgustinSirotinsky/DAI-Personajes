@@ -1,11 +1,11 @@
 const config = {
-    user        : 'Pizzas',
-    password    : 'Pizzas',
-    server      : 'N059D021', 
+    user        : 'sa',
+    password    : 'sa',
+    server      : 'DESKTOP-DADROOA\\SQLEXPRESS', 
     database    : 'disney',
     options     : {
-        trustServerCertificate  : true,
-        trustedConnection       : true
+        trustedConnection       : true,
+        trustServerCertificate  : true
     }
 }
 
