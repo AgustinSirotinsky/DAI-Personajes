@@ -1,7 +1,7 @@
 const config = {
-    user        : 'sa',
-    password    : 'sa',
-    server      : 'DESKTOP-DADROOA\\SQLEXPRESS', 
+    user        : 'alumno',
+    password    : 'alumno',
+    server      : 'A-PHZ2-CEO-010', 
     database    : 'disney',
     options     : {
         trustedConnection       : true,
