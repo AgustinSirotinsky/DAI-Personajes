@@ -14,5 +14,21 @@ class CharacterService {
         }
         return returnArray;
     }
+
+
+getById = async (id) => {
+    let returnEntity = null;
+    console.log('Estoy en: Character.getById(id)');
+    try {
+        let pool   = await sql.connect(config);
+        let result = await pool.request()
+                            .input('pId', sql.Int, id)
+                            .query('SELECT * FROM Personaje WHERE id = @pId');
+        returnEntity = result.recordsets[0][0];
+    } catch (error) {
+        console.log(error);
+    }
+    return returnEntity;
+}
 }
 export default CharacterService

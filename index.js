@@ -10,3 +10,9 @@ async function test_getAll(){
   data=await svc.getAll();
   console.log(data);
 }
+async function test_getById(){
+  let svc = new CharacterService();
+  let data;
+  data = await svc.getById(2);
+  console.log(data);
+}
