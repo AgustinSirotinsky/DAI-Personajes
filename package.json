@@ -21,6 +21,7 @@
   "homepage": "https://github.com/agussiro06/DAI-Personajes#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mssql": "^9.1.1"
   },

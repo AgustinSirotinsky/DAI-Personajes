@@ -3,7 +3,7 @@ import sql from 'mssql'
 class CharacterService {
     getAll = async () => {
         let returnArray = null;
-        console.log('Estoy en: PizzaService.getAll()');
+        console.log('Estoy en: CharacterService.getAll()');
         try {
             let pool   = await sql.connect(config);
             let result = await pool.request().query("SELECT * from Personaje");
@@ -15,3 +15,4 @@ class CharacterService {
         return returnArray;
     }
 }
+export default CharacterService
