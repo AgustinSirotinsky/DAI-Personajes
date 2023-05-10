@@ -1,7 +1,7 @@
 import CharacterService from './src/services/character-services.js'
 import Personaje from './src/models/Personaje.js'
 
-await test_insert();
+await test_update();
 
 async function test_getAll(){
   let svc = new CharacterService();
@@ -22,14 +22,30 @@ async function test_insert(){
   let nuevoCharacter = new Personaje();
   
   nuevoCharacter.nombre       = 'patodonal';
-  nuevoCharacter.imagen       ='patodonal';
+  nuevoCharacter.imagen       = 'patodonal';
   nuevoCharacter.edad         =15;
-  nuevoCharacter.peso    =12;
-  nuevoCharacter.historia     ='hola soy el patodonal'
+  nuevoCharacter.peso         =12;
+  nuevoCharacter.historia     ='hola soy el patodonal';
 
   console.log('\nnuevoCharacter: ');
   console.log(nuevoCharacter);
 
   data = await svc.insert(nuevoCharacter);
   console.log(data);
+}
+async function test_update(){
+  let svc = new CharacterService();
+  let data;
+  let nuevoCharacter;
+
+  nuevoCharacter = await svc.getById(2);
+  if (nuevoCharacter!= null){
+    nuevoCharacter.nombre       = 'patodonal';
+
+      data = await svc.update(nuevoCharacter);
+      console.log(data);
+  } else {
+      console.log('\nuevoCharacter: ');
+      console.log(nuevoCharacter);
+  }
 }
