@@ -55,7 +55,7 @@ update = async (Pelicula) => {
     try {
         let pool = await sql.connect(config);
         let result = await pool.request()
-        .input('pImagen'     , sql.VarChar , Pelicula?.imagen ?? '')
+            .input('pImagen'     , sql.VarChar , Pelicula?.imagen ?? '')
             .input('pTitulo'     , sql.VarChar , Pelicula?.titulo ?? '')
             .input('pFechaDeCreacion'     , sql.Date , Pelicula?.fechaDeCreacion ?? 0)
             .input('pClasificacion'     , sql.Int , Pelicula?.clasificación ?? '')

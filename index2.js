@@ -1,7 +1,7 @@
 import MovieService from './src/services/movie-service.js';
 import Pelicula from './src/models/Pelicula.js'
 
-await Pelicula_update();
+await Pelicula_insert();
 
 async function Pelicula_getAll(){
     let svc = new MovieService();
@@ -21,11 +21,10 @@ async function Pelicula_getAll(){
     let data;
     let nuevaPelicula = new Pelicula();
     
-    nuevaPelicula.nombre       = 'patodonal';
+    nuevaPelicula.titulo       = 'patodonal';
     nuevaPelicula.imagen       = 'patodonal';
-    nuevaPelicula.edad         =15;
-    nuevaPelicula.peso         =12;
-    nuevaPelicula.historia     ='hola soy el patodonal';
+    nuevaPelicula.fechaDeCreacion         =0;
+    nuevaPelicula.clasificacion         =10;
   
     console.log('\nnuevaPelicula: ');
     console.log(nuevaPelicula);
