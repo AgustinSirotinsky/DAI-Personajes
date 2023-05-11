@@ -69,6 +69,19 @@ update = async (Personaje) => {
     }
     return rowsAffected;
 }
-
+deleteById = async (id) => {
+    let rowsAffected = 0;
+    console.log('Estoy en: PersonajeService.deleteById(id)');
+    try {
+        let pool   = await sql.connect(config);
+        let result = await pool.request()
+                            .input('pId', sql.Int, id)
+                            .query('DELETE FROM Personaje WHERE id = @pId');
+        rowsAffected = result.rowsAffected;
+    } catch (error) {
+        console.log(error);
+    }
+    return rowsAffected;
+}
 }
 export default CharacterService
