@@ -3,6 +3,7 @@ import Personaje from './src/models/Personaje.js'
 
 await Personaje_getAll();
 
+
 async function Personaje_getAll(){
   let svc = new CharacterService();
   let data;
